@@ -29,11 +29,11 @@ public:
         
         // Create Input Buffer
         out << "    std::vector<float> input_tensor(N, 1.0f); // Init with 1.0\n";
+        out << "    double total_time = 0.0;\n"; // Track overall time
         
         std::string current_input = "input_tensor";
 
-        // --- START TIMER ---
-        out << "    auto start = std::chrono::high_resolution_clock::now();\n\n";
+        int op_id = 0; // To give unique names to timers (start_0, start_1...)
 
         // 2. Loop through operators and generate code for each
         for (const auto& op : model.operators) {
@@ -42,34 +42,57 @@ public:
             // Create the output buffer for this op
             out << "    std::vector<float> " << op.output_name << "(N);\n";
 
+            // Start Timer for THIS op
+            out << "    auto start_" << op_id << " = std::chrono::high_resolution_clock::now();\n";
+
+            // if (op.type == OpType::RELU) {
+            //     // Generate ReLU Loop
+            //     out << "    for (int i = 0; i < N; ++i) {\n";
+            //     out << "        " << op.output_name << "[i] = std::max(0.0f, " << current_input << "[i]);\n";
+            //     out << "    }\n";
+            // } 
+            // else if (op.type == OpType::MATMUL) {
+            //     // For this simple project, we are faking a MatMul as a 
+            //     // "Matrix-Vector Multiplication" with a fake 1.0 weight.
+            //     // In a real compiler, we would load weights from a file.
+            //     out << "    // Simulating MatMul (y = x * 2.0 for demo)\n";
+            //     out << "    for (int i = 0; i < N; ++i) {\n";
+            //     out << "        " << op.output_name << "[i] = " << current_input << "[i] * 2.0f;\n";
+            //     out << "    }\n";
+            // }
+
+            // --- LOGIC GENERATION ---
             if (op.type == OpType::RELU) {
-                // Generate ReLU Loop
-                out << "    for (int i = 0; i < N; ++i) {\n";
-                out << "        " << op.output_name << "[i] = std::max(0.0f, " << current_input << "[i]);\n";
-                out << "    }\n";
+                out << "    for (int i = 0; i < N; ++i) " << op.output_name << "[i] = std::max(0.0f, " << current_input << "[i]);\n";
             } 
             else if (op.type == OpType::MATMUL) {
-                // For this simple project, we are faking a MatMul as a 
-                // "Matrix-Vector Multiplication" with a fake 1.0 weight.
-                // In a real compiler, we would load weights from a file.
-                out << "    // Simulating MatMul (y = x * 2.0 for demo)\n";
-                out << "    for (int i = 0; i < N; ++i) {\n";
-                out << "        " << op.output_name << "[i] = " << current_input << "[i] * 2.0f;\n";
-                out << "    }\n";
+                out << "    for (int i = 0; i < N; ++i) " << op.output_name << "[i] = " << current_input << "[i] * 2.0f;\n";
             }
-            // --- NEW: Handle the Fused Op ---
+
+            // Case 1: MatMul first, then ReLU
             else if (op.type == OpType::FUSED_MATMUL_RELU) {
-                out << "    // [OPTIMIZED] Fused MatMul + ReLU Kernel\n";
                 out << "    for (int i = 0; i < N; ++i) {\n";
-                out << "        // 1. Perform MatMul (temp variable, in register)\n";
                 out << "        float temp = " << current_input << "[i] * 2.0f;\n";
-                out << "        // 2. Perform ReLU immediately\n";
                 out << "        " << op.output_name << "[i] = std::max(0.0f, temp);\n";
                 out << "    }\n";
             }
+            // Case 2: ReLU first, then MatMul
+            else if (op.type == OpType::FUSED_RELU_MATMUL) {
+                out << "    for (int i = 0; i < N; ++i) {\n";
+                out << "        float temp = std::max(0.0f, " << current_input << "[i]);\n";
+                out << "        " << op.output_name << "[i] = temp * 2.0f;\n";
+                out << "    }\n";
+            }
+
+            // Stop Timer for THIS op
+            out << "    auto end_" << op_id << " = std::chrono::high_resolution_clock::now();\n";
+            out << "    std::chrono::duration<double> diff_" << op_id << " = end_" << op_id << " - start_" << op_id << ";\n";
+            out << "    std::cout << \"  Op " << op.name << ": \" << diff_" << op_id << ".count() << \" s\" << std::endl;\n";
+            out << "    total_time += diff_" << op_id << ".count();\n";
 
             // Update current input for the next op
             current_input = op.output_name;
+            op_id++;
         }
 
         // 3. Print Result (Verification)
@@ -78,14 +101,11 @@ public:
         out << "    for(int i=0; i<5; ++i) std::cout << " << current_input << "[i] << \" \";\n";
         out << "    std::cout << std::endl;\n";
 
-        // --- STOP TIMER ---
-        out << "\n    auto end = std::chrono::high_resolution_clock::now();\n";
-        out << "    std::chrono::duration<double> diff = end - start;\n";
-        out << "    std::cout << \"Time taken: \" << diff.count() << \" s\" << std::endl;\n";
-
+        out << "\n    std::cout << \"-------------------------\" << std::endl;\n";
+        out << "    std::cout << \"TOTAL TIME: \" << total_time << \" s\" << std::endl;\n";
         out << "    return 0;\n";
         out << "}\n";
-        
+
         std::cout << "[CODEGEN] Successfully generated: " << output_path << std::endl;
         out.close();
     }

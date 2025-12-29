@@ -8,9 +8,9 @@ model_name: happy_net
 input: input_tensor (100000000)
 
 # The Operations
-op: matmul : input_tensor -> matmul_out
-op: relu : matmul_out -> final_out
-
+op: relu : input_tensor -> mid
+op: matmul : mid -> out
+output: out
 # Output of the graph
 output: final_out
 a

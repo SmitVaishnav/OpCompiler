@@ -64,15 +64,15 @@ int main(int argc, char* argv[]) {
     std::cout << "[PARSER] Found " << raw_model.operators.size() << " raw ops.\n";
 
     // 2. Optimize
-    // Optimizer optimizer;
-    // Model optimized_model = optimizer.optimize(raw_model);
-    // std::cout << "[OPTIMIZER] Reduced to " << optimized_model.operators.size() << " ops.\n";
+    Optimizer optimizer;
+    Model optimized_model = optimizer.optimize(raw_model);
+    std::cout << "[OPTIMIZER] Reduced to " << optimized_model.operators.size() << " ops.\n";
 
     // 3. Generate
     CodeGen codegen;
     std::string output_file = "generated_model.cpp";
-    codegen.generate(raw_model, output_file);
-    // codegen.generate(optimized_model, output_file);
+    // codegen.generate(raw_model, output_file);
+    codegen.generate(optimized_model, output_file);
 
     std::cout << "Done! Compile with: \n";
     std::cout << "  g++ " << output_file << " -o run_model && ./run_model" << std::endl;

@@ -1,0 +1,10 @@
+# Test case: MatMul -> ReLU
+model_name: test_net
+
+input: input_tensor (100000000)
+
+# The Operations (reverse order)
+op: matmul : input_tensor -> mid
+op: relu : mid -> out
+output: out
+

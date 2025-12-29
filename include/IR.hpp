@@ -9,6 +9,7 @@ enum class OpType {
     RELU,
     MATMUL,
     FUSED_MATMUL_RELU,
+    FUSED_RELU_MATMUL,
     UNKNOWN
 };
 
