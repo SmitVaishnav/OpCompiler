@@ -1,0 +1,16 @@
+# simple_model.mdf
+# This is a comment
+# Structure: op_type : input_name -> output_name
+
+model_name: happy_net
+
+# Define the inputs to the graph
+input: input_tensor (100000000)
+
+# The Operations
+op: matmul : input_tensor -> matmul_out
+op: relu : matmul_out -> final_out
+
+# Output of the graph
+output: final_out
+a
