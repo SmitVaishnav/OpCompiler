@@ -153,6 +153,30 @@ src/CodeGen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opc.dir/build.make CMakeFiles/opc.dir/src/CodeGen.cpp.s
 .PHONY : src/CodeGen.cpp.s
 
+src/CudaCodeGen.o: src/CudaCodeGen.cpp.o
+.PHONY : src/CudaCodeGen.o
+
+# target to build an object file
+src/CudaCodeGen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opc.dir/build.make CMakeFiles/opc.dir/src/CudaCodeGen.cpp.o
+.PHONY : src/CudaCodeGen.cpp.o
+
+src/CudaCodeGen.i: src/CudaCodeGen.cpp.i
+.PHONY : src/CudaCodeGen.i
+
+# target to preprocess a source file
+src/CudaCodeGen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opc.dir/build.make CMakeFiles/opc.dir/src/CudaCodeGen.cpp.i
+.PHONY : src/CudaCodeGen.cpp.i
+
+src/CudaCodeGen.s: src/CudaCodeGen.cpp.s
+.PHONY : src/CudaCodeGen.s
+
+# target to generate assembly for a file
+src/CudaCodeGen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opc.dir/build.make CMakeFiles/opc.dir/src/CudaCodeGen.cpp.s
+.PHONY : src/CudaCodeGen.cpp.s
+
 src/Optimizer.o: src/Optimizer.cpp.o
 .PHONY : src/Optimizer.o
 
@@ -237,6 +261,9 @@ help:
 	@echo "... src/CodeGen.o"
 	@echo "... src/CodeGen.i"
 	@echo "... src/CodeGen.s"
+	@echo "... src/CudaCodeGen.o"
+	@echo "... src/CudaCodeGen.i"
+	@echo "... src/CudaCodeGen.s"
 	@echo "... src/Optimizer.o"
 	@echo "... src/Optimizer.i"
 	@echo "... src/Optimizer.s"

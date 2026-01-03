@@ -86,10 +86,24 @@ CMakeFiles/opc.dir/src/CodeGen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/opc.dir/src/CodeGen.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/smitvaishnav/Developer/learning_compiler/opcompiler/src/CodeGen.cpp -o CMakeFiles/opc.dir/src/CodeGen.cpp.s
 
+CMakeFiles/opc.dir/src/CudaCodeGen.cpp.o: CMakeFiles/opc.dir/flags.make
+CMakeFiles/opc.dir/src/CudaCodeGen.cpp.o: /Users/smitvaishnav/Developer/learning_compiler/opcompiler/src/CudaCodeGen.cpp
+CMakeFiles/opc.dir/src/CudaCodeGen.cpp.o: CMakeFiles/opc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/opc.dir/src/CudaCodeGen.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/opc.dir/src/CudaCodeGen.cpp.o -MF CMakeFiles/opc.dir/src/CudaCodeGen.cpp.o.d -o CMakeFiles/opc.dir/src/CudaCodeGen.cpp.o -c /Users/smitvaishnav/Developer/learning_compiler/opcompiler/src/CudaCodeGen.cpp
+
+CMakeFiles/opc.dir/src/CudaCodeGen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/opc.dir/src/CudaCodeGen.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/smitvaishnav/Developer/learning_compiler/opcompiler/src/CudaCodeGen.cpp > CMakeFiles/opc.dir/src/CudaCodeGen.cpp.i
+
+CMakeFiles/opc.dir/src/CudaCodeGen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/opc.dir/src/CudaCodeGen.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/smitvaishnav/Developer/learning_compiler/opcompiler/src/CudaCodeGen.cpp -o CMakeFiles/opc.dir/src/CudaCodeGen.cpp.s
+
 CMakeFiles/opc.dir/src/Optimizer.cpp.o: CMakeFiles/opc.dir/flags.make
 CMakeFiles/opc.dir/src/Optimizer.cpp.o: /Users/smitvaishnav/Developer/learning_compiler/opcompiler/src/Optimizer.cpp
 CMakeFiles/opc.dir/src/Optimizer.cpp.o: CMakeFiles/opc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/opc.dir/src/Optimizer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/opc.dir/src/Optimizer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/opc.dir/src/Optimizer.cpp.o -MF CMakeFiles/opc.dir/src/Optimizer.cpp.o.d -o CMakeFiles/opc.dir/src/Optimizer.cpp.o -c /Users/smitvaishnav/Developer/learning_compiler/opcompiler/src/Optimizer.cpp
 
 CMakeFiles/opc.dir/src/Optimizer.cpp.i: cmake_force
@@ -103,7 +117,7 @@ CMakeFiles/opc.dir/src/Optimizer.cpp.s: cmake_force
 CMakeFiles/opc.dir/src/Parser.cpp.o: CMakeFiles/opc.dir/flags.make
 CMakeFiles/opc.dir/src/Parser.cpp.o: /Users/smitvaishnav/Developer/learning_compiler/opcompiler/src/Parser.cpp
 CMakeFiles/opc.dir/src/Parser.cpp.o: CMakeFiles/opc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/opc.dir/src/Parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/opc.dir/src/Parser.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/opc.dir/src/Parser.cpp.o -MF CMakeFiles/opc.dir/src/Parser.cpp.o.d -o CMakeFiles/opc.dir/src/Parser.cpp.o -c /Users/smitvaishnav/Developer/learning_compiler/opcompiler/src/Parser.cpp
 
 CMakeFiles/opc.dir/src/Parser.cpp.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/opc.dir/src/Parser.cpp.s: cmake_force
 CMakeFiles/opc.dir/src/main.cpp.o: CMakeFiles/opc.dir/flags.make
 CMakeFiles/opc.dir/src/main.cpp.o: /Users/smitvaishnav/Developer/learning_compiler/opcompiler/src/main.cpp
 CMakeFiles/opc.dir/src/main.cpp.o: CMakeFiles/opc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/opc.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/opc.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/opc.dir/src/main.cpp.o -MF CMakeFiles/opc.dir/src/main.cpp.o.d -o CMakeFiles/opc.dir/src/main.cpp.o -c /Users/smitvaishnav/Developer/learning_compiler/opcompiler/src/main.cpp
 
 CMakeFiles/opc.dir/src/main.cpp.i: cmake_force
@@ -131,6 +145,7 @@ CMakeFiles/opc.dir/src/main.cpp.s: cmake_force
 # Object files for target opc
 opc_OBJECTS = \
 "CMakeFiles/opc.dir/src/CodeGen.cpp.o" \
+"CMakeFiles/opc.dir/src/CudaCodeGen.cpp.o" \
 "CMakeFiles/opc.dir/src/Optimizer.cpp.o" \
 "CMakeFiles/opc.dir/src/Parser.cpp.o" \
 "CMakeFiles/opc.dir/src/main.cpp.o"
@@ -139,12 +154,13 @@ opc_OBJECTS = \
 opc_EXTERNAL_OBJECTS =
 
 opc: CMakeFiles/opc.dir/src/CodeGen.cpp.o
+opc: CMakeFiles/opc.dir/src/CudaCodeGen.cpp.o
 opc: CMakeFiles/opc.dir/src/Optimizer.cpp.o
 opc: CMakeFiles/opc.dir/src/Parser.cpp.o
 opc: CMakeFiles/opc.dir/src/main.cpp.o
 opc: CMakeFiles/opc.dir/build.make
 opc: CMakeFiles/opc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable opc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable opc"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/opc.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

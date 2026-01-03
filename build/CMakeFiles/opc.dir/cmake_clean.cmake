@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/opc.dir/src/CodeGen.cpp.o"
   "CMakeFiles/opc.dir/src/CodeGen.cpp.o.d"
+  "CMakeFiles/opc.dir/src/CudaCodeGen.cpp.o"
+  "CMakeFiles/opc.dir/src/CudaCodeGen.cpp.o.d"
   "CMakeFiles/opc.dir/src/Optimizer.cpp.o"
   "CMakeFiles/opc.dir/src/Optimizer.cpp.o.d"
   "CMakeFiles/opc.dir/src/Parser.cpp.o"

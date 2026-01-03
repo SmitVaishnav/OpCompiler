@@ -85,12 +85,12 @@ clean: CMakeFiles/opc.dir/clean
 CMakeFiles/opc.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opc.dir/build.make CMakeFiles/opc.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opc.dir/build.make CMakeFiles/opc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target opc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target opc"
 .PHONY : CMakeFiles/opc.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/opc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/opc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles 0
 .PHONY : CMakeFiles/opc.dir/rule
@@ -102,7 +102,7 @@ opc: CMakeFiles/opc.dir/rule
 # codegen rule for target.
 CMakeFiles/opc.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opc.dir/build.make CMakeFiles/opc.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles --progress-num=1,2,3,4,5 "Finished codegen for target opc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/smitvaishnav/Developer/learning_compiler/opcompiler/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target opc"
 .PHONY : CMakeFiles/opc.dir/codegen
 
 # clean rule for target.
