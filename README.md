@@ -97,7 +97,6 @@ nvcc -arch=sm_75 generated_model.cu -o run_gpu
 
 ### 📂 Project Structure
 ```plaintext
-
 OpCompiler/
 ├── src/
 │   ├── Parser.cpp        # Converts Text -> IR
