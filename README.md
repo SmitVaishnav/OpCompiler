@@ -81,7 +81,7 @@ g++ generated_model.cpp -o run_cpu -O3
 ./run_cpu
 ```
 
-###3. Run: GPU Mode (CUDA)
+### 3. Run: GPU Mode (CUDA)
 Target an NVIDIA GPU (or run on Google Colab).
 ```bash
 # 1. Compile the Model for GPU
@@ -95,7 +95,7 @@ nvcc -arch=sm_75 generated_model.cu -o run_gpu
 ./run_gpu
 ```
 
-###📂 Project Structure
+### 📂 Project Structure
 ```plaintext
 
 OpCompiler/
